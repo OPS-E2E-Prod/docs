@@ -7,7 +7,7 @@
   "git_repository_url_open_to_public_contributors": "https://github.com/dotnet/docs",
   "docsets_to_publish": [
     {
-      "docset_name": "core-docs",
+      "docset_name": "e2eprod-core-docs",
       "build_source_folder": ".",
       "build_output_subfolder": ".",
       "locale": "en-us",
