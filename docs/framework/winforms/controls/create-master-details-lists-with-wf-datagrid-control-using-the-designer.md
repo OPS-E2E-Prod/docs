@@ -2,7 +2,7 @@
 title: "How to: Create Master-Details Lists with the Windows Forms DataGrid Control Using the Designer | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,8 +17,8 @@ helpviewer_keywords:
   - "related tables, displaying in DataGrid control"
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
 caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
+author: dotnet-bot
+ms.author: dotnetcontent
 manager: "wpickett"
 ---
 # How to: Create Master-Details Lists with the Windows Forms DataGrid Control Using the Designer

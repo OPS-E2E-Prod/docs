@@ -2,7 +2,7 @@
 title: "BindingNavigator Control (Windows Forms) | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -17,8 +17,8 @@ helpviewer_keywords:
   - "data navigation"
 ms.assetid: 18c1e2a5-9834-40d3-9b2e-2b545e4e769e
 caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
+author: dotnet-bot
+ms.author: dotnetcontent
 manager: "wpickett"
 ---
 # BindingNavigator Control (Windows Forms)

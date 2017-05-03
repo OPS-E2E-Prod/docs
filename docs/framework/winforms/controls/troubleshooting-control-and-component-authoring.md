@@ -2,7 +2,7 @@
 title: "Troubleshooting Control and Component Authoring | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -19,8 +19,8 @@ helpviewer_keywords:
   - "Windows Forms controls, debugging"
 ms.assetid: e9c8c099-2271-4737-882f-50f336c7a55e
 caps.latest.revision: 22
-author: "stevehoag"
-ms.author: "shoag"
+author: dotnet-bot
+ms.author: dotnetcontent
 manager: "wpickett"
 ---
 # Troubleshooting Control and Component Authoring

@@ -32,9 +32,7 @@
     </Attribute>
   </Attributes>
   <Docs>
-    <summary>Represents a mutable string of characters. This class cannot be inherited.  
-  
- To browse the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#mscorlib/system/text/stringbuilder.cs#adf60ee46ebd299f).</summary>
+    <summary>Represents a mutable string of characters. This class cannot be inherited.</summary>
     <remarks>
       <format type="text/markdown"><![CDATA[  
   
@@ -1611,7 +1609,7 @@
 ## Remarks  
  This method appends the specified range of characters in `value` to the current instance. If `value` is `null` and `startIndex` and `count` are both zero, no changes are made.  
   
- The [Append Method (Char\<xref:System.Text.StringBuilder.Append%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29> method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <xref:System.Text.StringBuilder> object, as the following example illustrates.  
+ The <xref:System.Text.StringBuilder.Append%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29> method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <xref:System.Text.StringBuilder> object, as the following example illustrates.  
   
  [!code-csharp[System.Text.StringBuilder.Append#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Text.StringBuilder.Append/cs/append2.cs#7)]
  [!code-vb[System.Text.StringBuilder.Append#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Text.StringBuilder.Append/vb/append2.vb#7)]  
@@ -4247,7 +4245,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method performs an ordinal, case-sensitive comparison to identify occurrences of `oldValue` in the current instance. If `newValue` is `null`or<xref:System.String?displayProperty=fullName>, all occurrences of `oldValue` are removed.  
+ This method performs an ordinal, case-sensitive comparison to identify occurrences of `oldValue` in the current instance. If `newValue` is `null` or <xref:System.String?displayProperty=fullName>, all occurrences of `oldValue` are removed.  
   
    
   
@@ -4369,7 +4367,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
- This method performs an ordinal, case-sensitive comparison to identify occurrences of `oldValue` in the specified substring. If `newValue` is `null`or<xref:System.String?displayProperty=fullName>, all occurrences of `oldValue` are removed.  
+ This method performs an ordinal, case-sensitive comparison to identify occurrences of `oldValue` in the specified substring. If `newValue` is `null` or <xref:System.String?displayProperty=fullName>, all occurrences of `oldValue` are removed.  
   
    
   

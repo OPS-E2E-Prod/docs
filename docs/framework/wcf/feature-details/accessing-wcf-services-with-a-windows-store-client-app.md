@@ -2,7 +2,7 @@
 title: "Accessing WCF Services with a Windows Store Client App | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -36,7 +36,7 @@ Windows 8 introduces a new type of application called Windows Store applications
   
 3.  <xref:System.ServiceModel.NetHttpBinding>  
   
-4.  !<-- zz<xref:System.ServiceModel.CustomBinding>--> `System.ServiceModel.CustomBinding`
+4.  <xref:System.ServiceModel.Channels.CustomBinding>
   
  The following binding elements are supported in Windows Store Applications  
   

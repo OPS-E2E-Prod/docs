@@ -2,7 +2,7 @@
 title: "WPF Windows Overview | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -35,8 +35,8 @@ helpviewer_keywords:
   - "displaying XAML pages"
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
 caps.latest.revision: 65
-author: "stevehoag"
-ms.author: "shoag"
+author: dotnet-bot
+ms.author: dotnetcontent
 manager: "wpickett"
 ---
 # WPF Windows Overview
@@ -302,11 +302,11 @@ Users interact with              [!INCLUDE[TLA#tla_wpf](../../../../includes/tla
   
  You can also specify the initial location of a                  <xref:System.Windows.Window> when it first appears by setting the                  <xref:System.Windows.Window.WindowStartupLocation%2A> property with one of the following                  <xref:System.Windows.WindowStartupLocation> enumeration values:  
   
--   <xref:System.Windows.WindowStartupLocation> (default)  
+-   <xref:System.Windows.WindowStartupLocation.CenterOwner> (default)  
   
--   <xref:System.Windows.WindowStartupLocation>  
+-   <xref:System.Windows.WindowStartupLocation.CenterScreen>  
   
--   <xref:System.Windows.WindowStartupLocation>  
+-   <xref:System.Windows.WindowStartupLocation.Manual>  
   
  If the startup location is specified as                  <xref:System.Windows.WindowStartupLocation>, and the                  <xref:System.Windows.Window.Left%2A> and                  <xref:System.Windows.Window.Top%2A> properties have not been set,                  <xref:System.Windows.Window> will ask                  [!INCLUDE[TLA2#tla_mswin](../../../../includes/tla2sharptla-mswin-md.md)] for a location to appear in.  
   

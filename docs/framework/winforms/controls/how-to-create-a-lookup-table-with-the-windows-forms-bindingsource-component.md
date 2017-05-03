@@ -2,7 +2,7 @@
 title: "How to: Create a Lookup Table with the Windows Forms BindingSource Component | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
@@ -18,8 +18,8 @@ helpviewer_keywords:
   - "BindingSource component [Windows Forms], examples"
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
 caps.latest.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
+author: dotnet-bot
+ms.author: dotnetcontent
 manager: "wpickett"
 ---
 # How to: Create a Lookup Table with the Windows Forms BindingSource Component
