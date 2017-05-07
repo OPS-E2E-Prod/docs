@@ -187,7 +187,7 @@
           <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
-The return value of <xref:System.Security.Cryptography.ICryptoTransform.TransformBlock> is the number of bytes returned to `outputBuffer` and is always less than or equal to <xref:System.Security.Cryptography.ICryptoTransform.OutputBlockSize>. If <xref:System.Security.Cryptography.ICryptoTransform.CanTransformMultipleBlocks> is `true`, then `inputCount` must be any positive multiple of <xref:System.Security.Cryptography.ICryptoTransform.InputBlockSize>.
+The return value of <xref:System.Security.Cryptography.ICryptoTransform.TransformBlock%2A> is the number of bytes returned to `outputBuffer` and is always less than or equal to <xref:System.Security.Cryptography.ICryptoTransform.OutputBlockSize>. If <xref:System.Security.Cryptography.ICryptoTransform.CanTransformMultipleBlocks> is `true`, then `inputCount` must be any positive multiple of <xref:System.Security.Cryptography.ICryptoTransform.InputBlockSize>.
   
  ]]></format>
         </remarks>
