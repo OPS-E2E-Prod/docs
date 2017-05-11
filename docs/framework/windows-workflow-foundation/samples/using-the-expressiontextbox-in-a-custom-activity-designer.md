@@ -2,7 +2,7 @@
 title: "Using the ExpressionTextBox in a Custom Activity Designer | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.tgt_pltfrm: ""
@@ -52,4 +52,4 @@ This sample shows how to use the <xref:System.Activities.Presentation.View.Expre
   
 ## See Also  
  <xref:System.Activities.Presentation.View.ExpressionTextBox>   
- [Developing Applications with the Workflow Designer](http://msdn.microsoft.com/library/4cd062b1-b496-4668-bbc1-ee85545e066d)
+ [Developing Applications with the Workflow Designer](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)

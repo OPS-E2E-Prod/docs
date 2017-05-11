@@ -2,22 +2,23 @@
 title: "StrongNameTokenFromPublicKey Function | Microsoft Docs"
 ms.custom: ""
 ms.date: "03/30/2017"
-ms.prod: ".net-framework-4.6"
+ms.prod: ".net-framework"
 ms.reviewer: ""
 ms.suite: ""
 ms.technology: 
   - "dotnet-clr"
 ms.tgt_pltfrm: ""
 ms.topic: "reference"
-apiname: 
+api_name: 
   - "StrongNameTokenFromPublicKey"
-apilocation: 
+api_location: 
   - "mscoree.dll"
   - "mscorsn.dll"
   - "clr.dll"
   - "mscorwks.dll"
   - "mscoreei.dll"
-apitype: "COM"
+api_type: 
+  - "COM"
 f1_keywords: 
   - "StrongNameTokenFromPublicKey"
 dev_langs: 
@@ -25,6 +26,8 @@ dev_langs:
 helpviewer_keywords: 
   - "StrongNameTokenFromPublicKey function [.NET Framework strong naming]"
 ms.assetid: 997e9e57-abb2-4217-bf20-1df621a75add
+topic_type: 
+  - "apiref"
 caps.latest.revision: 19
 author: "rpetrusha"
 ms.author: "ronpet"
