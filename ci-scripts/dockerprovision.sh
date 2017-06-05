@@ -3,7 +3,7 @@ DOCKER_PW="$2"
 WORK_FOLDER="$3"
 TARGET_IMAGE="$4"
 
-echo $WORK_FOLDER >> .buildtarget
+echo $WORK_FOLDER >> buildtarget.txt
 
 docker login -u "$DOCKER_UN" -p "$DOCKER_PW" constructors.azurecr.io
 
@@ -15,7 +15,7 @@ docker create --name builder constructors.azurecr.io/platforms/netcoresdk
 echo "Copying samples to container..."
 docker cp "$BUILD_REPOSITORY_LOCALPATH/samples/." builder:/samples/
 docker cp "$BUILD_REPOSITORY_LOCALPATH/ci-scripts/buildsamples.sh" builder:buildsamples.sh
-docker cp "$BUILD_REPOSITORY_LOCALPATH/.buildtarget" builder:.buildtarget
+docker cp "$BUILD_REPOSITORY_LOCALPATH/buildtarget.txt" builder:buildtarget.txt
 
 echo "Committing changes..."
 docker commit builder constructors.azurecr.io/platforms/netcoresdk
