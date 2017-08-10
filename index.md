@@ -14,7 +14,7 @@ description: Learn how to use .NET to create a variety of applications on any pl
                             <div class="card">
                                 <div class="cardImageOuter">
                                     <div class="cardImage">
-                                        <img data-hoverimage="/dotnet/images/hub/featured-1.svg" src="/dotnet/images/hub/featured-1.png" alt="" />
+                                        <img data-hoverimage="/dotnet/images/hub/featured-1.svg" src="/dotnet/images/hub/featured-1.png" alt="prtest" />
                                     </div>
                                 </div>
                                 <div class="cardText">
