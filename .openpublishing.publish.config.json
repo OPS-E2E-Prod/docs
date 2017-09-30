@@ -9,12 +9,10 @@
   "branch_target_mapping": {
     "live": [
       "Publish",
-      "Pdf",
       "Intellisense"
     ],
     "master": [
-      "Publish",
-      "Pdf"
+      "Publish"
     ]
   },
   "Targets": {
