@@ -1,4 +1,5 @@
 {
+  "need_generate_pdf": false,
   "need_generate_intellisense": false,
   "need_preview_pull_request": true,
   "need_pr_comments": false,
@@ -7,7 +8,6 @@
   "branch_target_mapping": {
     "live": [
       "Publish",
-      "Pdf",
       "Intellisense"
     ],
     "ai-ebook": [
@@ -30,9 +30,9 @@
   },
   "docsets_to_publish": [
     {
-      "docset_name": "core-docs",
+      "docset_name": "e2eprod-core-docs",
       "build_source_folder": ".",
-      "build_output_subfolder": ".",
+      "build_output_subfolder": "e2eprod-core-docs",
       "locale": "en-us",
       "monikers": [
         "netframework-4.5.1",
@@ -42,7 +42,7 @@
         "netframework-4.6.1",
         "netframework-4.6.2",
         "netframework-4.7",
-        "netframework-4.7.1",
+		    "netframework-4.7.1",
         "netcore-1.0",
         "netcore-1.1",
         "netcore-2.0",
@@ -96,7 +96,8 @@
     }
   ],
   "notification_subscribers": [],
-  "branches_to_filter": [],
+  "branches_to_filter": ["master-sync-work", "live-sync-work"], 
+  "git_repository_url_open_to_public_contributors": "https://github.com/dotnet/docs",
   "skip_source_output_uploading": false,
   "dependent_repositories": [
     {
