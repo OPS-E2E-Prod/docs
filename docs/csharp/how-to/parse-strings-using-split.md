@@ -22,8 +22,9 @@ The <xref:System.String.Split%2A?displayProperty=nameWithType> method creates an
 array of substrings by splitting the input string based on one or more delimiters. It is often the easiest way to separate a string on word boundaries. It is also used
 to split strings on other specific characters or strings.
 
+[!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
+
 The following code splits a common phrase into an array of strings for each word.
-Try it yourself by pressing the *Run* button.
 
 [!code-csharp-interactive[split strings on word boundaries](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#1)]
 
@@ -37,7 +38,7 @@ which uses space as a separator:
 This behavior makes it easier for formats like comma separated values (CSV)
 files representing tabular data. Consecutive commas represent a blank column.
 
-You can pass an optional <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=fullName> parameter to
+You can pass an optional <xref:System.StringSplitOptions.RemoveEmptyEntries?displayProperty=nameWithType> parameter to
 exclude any empty strings in the returned array. For more complicated processing of the returned
 collection, you can use [LINQ](../programming-guide/concepts/linq/index.md) to manipulate
 the result sequence.    

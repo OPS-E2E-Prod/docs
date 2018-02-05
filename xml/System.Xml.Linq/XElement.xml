@@ -39,10 +39,6 @@
       <format type="text/markdown"><![CDATA[  
   
 ## Remarks  
-  
-> [!NOTE]
->  To view the .NET Framework source code for this type, see the [Reference Source](http://referencesource.microsoft.com/#System.Xml.Linq/XLinq.cs#3367036406d1344a). You can browse through the source code online, download the reference for offline viewing, and step through the sources (including patches and updates) during debugging; see [instructions](http://referencesource.microsoft.com/).  
-  
  This class represents an XML element, the fundamental XML construct.  See [XElement Class Overview](http://msdn.microsoft.com/library/d35180fe-7016-4895-9bfc-ba1e3f7875ec) for other usage information.  
   
  An element has an <xref:System.Xml.Linq.XName>, optionally one or more attributes, and can optionally contain content (for more information, see <xref:System.Xml.Linq.XContainer.Nodes%2A>).  
@@ -3739,7 +3735,7 @@ Console.WriteLine("(bool)BoolValue2={0}", bool2)
   
  Behavior is lax when casting to a <xref:System.DateTime> from an attribute or element. Even if the attribute or element value is not formatted exactly per the W3C specification, the value is appropriately converted to a <xref:System.DateTime>.  
   
- This conversion operator uses <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> to convert from a <xref:System.DateTime>.
+ This conversion operator uses <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> to convert from a <xref:System.DateTime>.
 
 ## Examples  
  The following example creates an element with date and time content. It then casts it to <xref:System.DateTime> to retrieve the value.  
@@ -4323,7 +4319,7 @@ Nullable Boolean: value2=False
   
  The behavior is lax when casting to a <xref:System.Nullable%601> of <xref:System.DateTime> from an attribute or element. Even if the attribute or element value is not formatted exactly per the W3C specification, the value is appropriately converted to a <xref:System.Nullable%601> of <xref:System.DateTime>.  
   
- This conversion operator uses <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=fullName> to convert from a <xref:System.DateTime>.
+ This conversion operator uses <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> to convert from a <xref:System.DateTime>.
   
 ## Examples  
  The following example creates an element with a date and time as content. It then retrieves the value by casting to <xref:System.Nullable%601> of <xref:System.DateTime>.  
