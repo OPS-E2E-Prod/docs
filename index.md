@@ -619,7 +619,7 @@ ms.custom: "updateeachrelease"
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img src="/dotnet/images/hub/net-docs-gaming-3.svg" alt="" />
+                                                    <img src="/dotnet/images/hub/net-docs-gaming-3.svg" alt="net-docs-gaming" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
