@@ -1,4 +1,5 @@
 {
+  "need_generate_pdf": false,
   "need_generate_intellisense": false,
   "need_preview_pull_request": true,
   "need_pr_comments": false,
@@ -33,9 +34,9 @@
   },
   "docsets_to_publish": [
     {
-      "docset_name": "core-docs",
+      "docset_name": "e2eprod-core-docs",
       "build_source_folder": ".",
-      "build_output_subfolder": ".",
+      "build_output_subfolder": "e2eprod-core-docs",
       "locale": "en-us",
       "xref_query_tags": ["/uwp/api"],
       "monikers": [
@@ -74,7 +75,7 @@
     }
   ],
   "notification_subscribers": [],
-  "branches_to_filter": [],
+  "branches_to_filter": ["master-sync-work", "live-sync-work"],
   "skip_source_output_uploading": false,
   "dependent_repositories": [
     {
