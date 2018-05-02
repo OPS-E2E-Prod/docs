@@ -18,7 +18,7 @@ ms.workload:
   - "dotnet"
 ---
 # Selecting a Credential Type
-*Credentials* are the data [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] uses to establish either a claimed identity or capabilities. For example, a passport is a credential a government issues to prove citizenship in a country or region. In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], credentials can take many forms, such as user name tokens and X.509 certificates. This topic discusses credentials, how they are used in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], and how to select the right credential for your application.  
+*Credentials* are the data Windows Communication Foundation (WCF) uses to establish either a claimed identity or capabilities. For example, a passport is a credential a government issues to prove citizenship in a country or region. In [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], credentials can take many forms, such as user name tokens and X.509 certificates. This topic discusses credentials, how they are used in [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)], and how to select the right credential for your application.  
   
  In many countries and regions, a driver’s license is an example of a credential. A license contains data that represents a person's identity and capabilities. It contains proof of possession in the form of the possessor's picture. The license is issued by a trusted authority, usually a governmental department of licensing. The license is sealed, and can contain a hologram, showing that it has not been tampered with or counterfeited.  
   
@@ -103,7 +103,7 @@ ms.workload:
 > [!IMPORTANT]
 >  There is a situation to be aware of when the identity cannot be switched (that is, when establish security context is on, the default behavior). If you create a service that communicates with a second service, the identity used to open the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] client to the second service cannot be changed. This becomes a problem if multiple clients are allowed to use the first service and the service impersonates the clients when accessing the second service. If the service reuses the same client for all callers, all calls to the second service are done under the identity of the first caller that was used to open the client to the second service. In other words, the service uses the identity of the first client for all its clients to communicate with the second service. This can lead to the elevation of privilege. If this is not the desired behavior of your service, you must track each caller and create a new client to the second service for every distinct caller, and ensure that the service uses only the right client for the right caller to communicate with the second service.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] credentials and secure sessions, see [Security Considerations for Secure Sessions](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
+ For more information about credentials and secure sessions, see [Security Considerations for Secure Sessions](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md).  
   
 ## See Also  
  <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>  

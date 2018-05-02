@@ -18,7 +18,7 @@ ms.workload:
   - "dotnet"
 ---
 # Unsupported Scenarios
-For various reasons, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] does not support some specific security scenarios. For example, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition does not implement the SSPI or Kerberos authentication protocols, and therefore [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not support running a service with Windows authentication on that platform. Other authentication mechanisms, such as username/password and HTTP/HTTPS integrated authentication are supported when running [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] under Windows XP Home Edition.  
+For various reasons, Windows Communication Foundation (WCF) does not support some specific security scenarios. For example, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition does not implement the SSPI or Kerberos authentication protocols, and therefore [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] does not support running a service with Windows authentication on that platform. Other authentication mechanisms, such as username/password and HTTP/HTTPS integrated authentication are supported when running [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] under Windows XP Home Edition.  
   
 ## Impersonation Scenarios  
   
@@ -53,7 +53,7 @@ For various reasons, [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] doe
 >  The default value for the <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> property of the <xref:System.ServiceModel.Security.WindowsClientCredential> class is <xref:System.Security.Principal.TokenImpersonationLevel.Identification>. In most cases, an identification-level impersonation context has no rights to load any additional assemblies. This is the default value, so this is a very common condition to be aware of. Identification-level impersonation also occurs when the impersonating process does not have the `SeImpersonate` privilege. For more information, see [Delegation and Impersonation](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ### Delegation Requires Credential Negotiation  
- To use the Kerberos authentication protocol with delegation, you must implement the Kerberos protocol with credential negotiation (sometimes called multi-leg or multi-step Kerberos). If you implement Kerberos authentication without credential negotiation (sometimes called one-shot or single-leg Kerberos), an exception is thrown. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] how to implement credential negotiation, see [Debugging Windows Authentication Errors](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md).  
+ To use the Kerberos authentication protocol with delegation, you must implement the Kerberos protocol with credential negotiation (sometimes called multi-leg or multi-step Kerberos). If you implement Kerberos authentication without credential negotiation (sometimes called one-shot or single-leg Kerberos), an exception is thrown. For more information about how to implement credential negotiation, see [Debugging Windows Authentication Errors](../../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md).  
   
 ## Cryptography  
   

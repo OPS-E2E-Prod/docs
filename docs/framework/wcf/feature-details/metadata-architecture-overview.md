@@ -20,7 +20,7 @@ ms.workload:
   - "dotnet"
 ---
 # Metadata Architecture Overview
-[!INCLUDE[indigo1](../../../../includes/indigo1-md.md)] provides a rich infrastructure for exporting, publishing, retrieving, and importing service metadata. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services use metadata to describe how to interact with the service's endpoints so that tools, such as Svcutil.exe, can automatically generate client code for accessing the service.  
+Windows Communication Foundation (WCF) provides a rich infrastructure for exporting, publishing, retrieving, and importing service metadata. [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] services use metadata to describe how to interact with the service's endpoints so that tools, such as Svcutil.exe, can automatically generate client code for accessing the service.  
   
  Most of the types that make up the [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] metadata infrastructure reside in the <xref:System.ServiceModel.Description> namespace.  
   
@@ -54,7 +54,7 @@ ms.workload:
   
  To add metadata endpoints that use the MEX protocol, add service endpoints to your service host that use the service contract named IMetadataExchange.[!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] defines the <xref:System.ServiceModel.Description.IMetadataExchange> interface that has this service contract name. WS-MetadataExchange endpoints, or MEX endpoints, can use one of the four default bindings exposed by the static factory methods on the <xref:System.ServiceModel.Description.MetadataExchangeBindings> class to match the default bindings used by [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] tools, such as Svcutil.exe. You can also configure MEX metadata endpoints using a custom binding.  
   
- The <xref:System.ServiceModel.Description.ServiceMetadataBehavior> uses a <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> to export metadata for all service endpoints in your service. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] exporting metadata from a service, see [Exporting and Importing Metadata](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
+ The <xref:System.ServiceModel.Description.ServiceMetadataBehavior> uses a <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> to export metadata for all service endpoints in your service. For more information about exporting metadata from a service, see [Exporting and Importing Metadata](../../../../docs/framework/wcf/feature-details/exporting-and-importing-metadata.md).  
   
  The <xref:System.ServiceModel.Description.ServiceMetadataBehavior> augments your service host by adding a <xref:System.ServiceModel.Description.ServiceMetadataExtension> instance as an extension to your service host. The <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> provides the implementation for the metadata publishing protocols. You can also use the <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> to get the service's metadata at runtime by accessing the <xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A> property.  
   

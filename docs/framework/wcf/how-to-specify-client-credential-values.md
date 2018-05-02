@@ -21,7 +21,7 @@ ms.workload:
   - "dotnet"
 ---
 # How to: Specify Client Credential Values
-Using [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service can specify how a client is authenticated to the service. For example, a service can stipulate that the client be authenticated with a certificate.  
+Using Windows Communication Foundation (WCF), the service can specify how a client is authenticated to the service. For example, a service can stipulate that the client be authenticated with a certificate.  
   
 ### To determine the client credential type  
   
@@ -70,7 +70,7 @@ Using [!INCLUDE[indigo1](../../../includes/indigo1-md.md)], the service can spec
   
 3.  Add a [\<clientCertificate>](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-servicecredentials.md) element to the [\<clientCredentials>](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) element.  
   
-4.  Set the following attributes to appropriate values: `storeLocation`, `storeName`, `x509FindType`, and `findValue`, as shown in the following code. [!INCLUDE[crabout](../../../includes/crabout-md.md)] certificates, see [Working with Certificates](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+4.  Set the following attributes to appropriate values: `storeLocation`, `storeName`, `x509FindType`, and `findValue`, as shown in the following code. For more information about certificates, see [Working with Certificates](../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
     ```xml  
     <behaviors>  

@@ -20,7 +20,7 @@ ms.workload:
 # Transaction Models
 This topic describes the relationship between the transaction programming models and the infrastructure components Microsoft provides.  
   
- When using transactions in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)], it is important to understand that you are not selecting between different transactional models, but rather operating at different layers of an integrated and consistent model.  
+ When using transactions in Windows Communication Foundation (WCF), it is important to understand that you are not selecting between different transactional models, but rather operating at different layers of an integrated and consistent model.  
   
  The following sections describe the three primary transaction components.  
   
@@ -32,7 +32,7 @@ This topic describes the relationship between the transaction programming models
 ## System.Transactions Transactions  
  The <xref:System.Transactions> namespace provides both an explicit programming model based on the <xref:System.Transactions.Transaction> class, as well as an implicit programming model using the <xref:System.Transactions.TransactionScope> class, in which the infrastructure automatically manages transactions.  
   
- [!INCLUDE[crabout](../../../../includes/crabout-md.md)] how to create a transactional application using these two models, see [Writing a Transactional Application](http://go.microsoft.com/fwlink/?LinkId=94947).  
+ For more information about how to create a transactional application using these two models, see [Writing a Transactional Application](http://go.microsoft.com/fwlink/?LinkId=94947).  
   
  In a [!INCLUDE[indigo2](../../../../includes/indigo2-md.md)] service or application, <xref:System.Transactions> provides the programming model for creating transactions within a client application and for explicitly interacting with a transaction, when required, within a service.  
   

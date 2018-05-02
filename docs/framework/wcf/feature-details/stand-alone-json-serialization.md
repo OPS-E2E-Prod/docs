@@ -18,7 +18,7 @@ ms.workload:
   - "dotnet"
 ---
 # Stand-Alone JSON Serialization
-JSON (JavaScript Object Notation) is a data format that is specifically designed to be used by JavaScript code running on Web pages inside the browser. It is the default data format used by ASP.NET AJAX services created in [!INCLUDE[indigo1](../../../../includes/indigo1-md.md)].  
+JSON (JavaScript Object Notation) is a data format that is specifically designed to be used by JavaScript code running on Web pages inside the browser. It is the default data format used by ASP.NET AJAX services created in Windows Communication Foundation (WCF).  
   
  This format can also be used when creating AJAX services without integrating with ASP.NET - in this case, XML is the default but JSON can be chosen.  
   
@@ -48,7 +48,7 @@ JSON (JavaScript Object Notation) is a data format that is specifically designed
 |`Null` value for any type|Null|Nullable types are also supported and map to JSON in the same way as non-nullable types.|  
   
 ### Enumerations and JSON  
- Enumeration member values are treated as numbers in JSON, which is different from how they are treated in data contracts, where they are included as member names. [!INCLUDE[crabout](../../../../includes/crabout-md.md)] the data contract treatment, see [Enumeration Types in Data Contracts](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
+ Enumeration member values are treated as numbers in JSON, which is different from how they are treated in data contracts, where they are included as member names. For more information about the data contract treatment, see [Enumeration Types in Data Contracts](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md).  
   
 -   For example, if you have `public enum Color {red, green, blue, yellow, pink}`, serializing `yellow` produces the number 3 and not the string "yellow".  
   
