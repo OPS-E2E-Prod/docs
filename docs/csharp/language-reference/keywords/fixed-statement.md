@@ -9,7 +9,7 @@ helpviewer_keywords:
 ---
 # fixed Statement (C# Reference)
 
-The `fixed` statement prevents the garbage collector from relocating a movable variable. The `fixed` statement is only permitted in an [unsafe](unsafe.md) context. `Fixed` can also be used to create [fixed size buffers](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md).
+The `fixed` statement prevents the garbage collector from relocating a movable variable. The `fixed` statement is only permitted in an [unsafe](unsafe.md) context. `fixed` can also be used to create [fixed size buffers](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md).
 
 The `fixed` statement sets a pointer to a managed variable and "pins" that variable during the execution of the statement. Pointers to movable managed variables are useful only in a `fixed` context. Without a `fixed` context, garbage collection could relocate the variables unpredictably. The C# compiler only lets you assign a pointer to a managed variable in a `fixed` statement.
 
@@ -23,7 +23,7 @@ Starting with C# 7.3, the `fixed` statement operates on additional types beyond 
 
 [!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#FixedSpan)]
 
-If you are created types that should participate in this pattern, see <xref:System.Span%601.DangerousGetPinnableReference?displayProperty=nameWithType> for an example of implementing the pattern.
+If you are creating types that should participate in this pattern, see <xref:System.Span%601.DangerousGetPinnableReference?displayProperty=nameWithType> for an example of implementing the pattern.
 
 Multiple pointers can be initialized in one statement if they are all the same type:
 
