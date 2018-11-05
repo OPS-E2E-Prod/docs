@@ -8,7 +8,7 @@ This topic describes how to call a workflow service from a workflow console appl
 
 ### Create a Workflow Console Application Project
 
-1.  Start [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].
+1.  Start Visual Studio 2012.
 
 2.  Load the MyWFService project you created in the [How to: Create a Workflow Service with Messaging Activities](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) topic.
 
@@ -36,13 +36,13 @@ This topic describes how to call a workflow service from a workflow console appl
 
      ![Echo activity in toolbox](../../../../docs/framework/wcf/feature-details/media/echoactivity.JPG "EchoActivity")
 
-7.  Drag and drop a <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` activity onto the designer surface. It is under the **Control Flow** section of the toolbox.
+7.  Drag and drop a <xref:System.Activities.Statements.Sequence> activity onto the designer surface. It is under the **Control Flow** section of the toolbox.
 
-8.  With the <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` activity in focus, click the **Variables** link and add a string variable named `inString`. Give the variable a default value of `"Hello, world"` as well as a string variable named `outString` as shown in the following diagram.
+8.  With the <xref:System.Activities.Statements.Sequence> activity in focus, click the **Variables** link and add a string variable named `inString`. Give the variable a default value of `"Hello, world"` as well as a string variable named `outString` as shown in the following diagram.
 
      ![Adding a variable](../../../../docs/framework/wcf/feature-details/media/instringvar.JPG "inStringVar")
 
-9. Drag and drop an **Echo** activity into the <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`. In the properties window bind the `inMsg` argument to the `inString` variable and the `outMsg` argument to the `outString` variable as shown in the following illustration. This passes in the value of the `inString` variable to the operation and then takes the return value and places it in the `outString` variable.
+9. Drag and drop an **Echo** activity into the <xref:System.Activities.Statements.Sequence>. In the properties window bind the `inMsg` argument to the `inString` variable and the `outMsg` argument to the `outString` variable as shown in the following illustration. This passes in the value of the `inString` variable to the operation and then takes the return value and places it in the `outString` variable.
 
      ![Binding the arguments to variables](../../../../docs/framework/wcf/feature-details/media/argumentbind.JPG "ArgumentBind")
 

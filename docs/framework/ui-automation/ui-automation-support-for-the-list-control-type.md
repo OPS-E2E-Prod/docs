@@ -8,7 +8,6 @@ helpviewer_keywords:
 ms.assetid: 0e959fcb-50f2-413b-948d-7167d279bc11
 author: "Xansky"
 ms.author: "mhopkins"
-manager: "markl"
 ---
 # UI Automation Support for the List Control Type
 > [!NOTE]
@@ -31,21 +30,19 @@ manager: "markl"
   
  The control view for a control that implements the List control type (such as a list control) consists of:  
   
--   Zero or more items within the list control (items can be based on the List Item or Data Item control types)  
+- Zero or more items within the list control (items can be based on the List Item or Data Item control types).
   
--   Zero or more group controls within a list control  
+- Zero or more group controls within a list control.
   
--   Zero, one, or two scroll bar controls  
+- Zero, one, or two scroll bar controls.
   
--  
+The content view of a control that implements the List control type (such as a list control) consists of:  
   
- The content view of a control that implements the List control type (such as a list control) consists of:  
+- Zero or more items within the list control (items can be based on the List Item or Data Item control types).
   
--   Zero or more items within the list control (items can be based on the List Item or Data Item control types)  
-  
--   Zero or more groups within the list control  
-  
- A list control must not have items that have a hierarchical relationship other than being grouped together. If the items have children in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, then the list container should be based on the Tree control type.  
+- Zero or more groups within the list control.
+
+A list control must not have items that have a hierarchical relationship other than being grouped together. If the items have children in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, then the list container should be based on the Tree control type.  
   
  The selectable items within the list control will be available from the descendants in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree of the list control. All items within the list control must belong to the same selection group. The selectable items in the list should be exposed as ListItem (instead of DataItem) control types.  
   

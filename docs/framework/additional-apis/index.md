@@ -9,6 +9,7 @@ helpviewer_keywords:
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 author: "mairaw"
 ms.author: "mairaw"
+ms.topic: conceptual
 ---
 
 # Additional class libraries and APIs
@@ -56,4 +57,4 @@ These APIs support the product infrastructure and are not intended/supported to 
   
 ## See also
 
-[The .NET Framework and Out-of-Band Releases](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)
+- [The .NET Framework and Out-of-Band Releases](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)

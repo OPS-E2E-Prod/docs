@@ -30,7 +30,7 @@ Windows Communication Foundation (WCF) implements a number of Web services proto
 |W3C Web Services Addressing 1.0 - Core|[Web Services Addressing 1.0 - Core](https://go.microsoft.com/fwlink/?LinkId=96688)|  
 |W3C Web Services Addressing 1.0 - SOAP Binding|[Web Services Addressing 1.0 - SOAP Binding](https://go.microsoft.com/fwlink/?LinkId=96689)|  
 |W3C Web Services Addressing 1.0 - WSDL Binding*|[Web Services Addressing 1.0 - WSDL Binding](https://go.microsoft.com/fwlink/?LinkId=96690)|  
-|W3C Web Services Addressing 1.0 Metadata|[Web Services Addressing 1.0 - Metadata](http://www.w3.org/TR/ws-addr-metadata/)|  
+|W3C Web Services Addressing 1.0 Metadata|[Web Services Addressing 1.0 - Metadata](https://www.w3.org/TR/ws-addr-metadata/)|  
 |WSDL SOAP1.1 Binding|[Web Services Description Language (WSDL) 1.1](https://go.microsoft.com/fwlink/?LinkId=96160)|  
 |WSDL SOAP1.2 Binding|[WSDL 1.1 Binding Extension for SOAP 1.2](https://go.microsoft.com/fwlink/?LinkId=96691)|  
   
@@ -68,7 +68,7 @@ Windows Communication Foundation (WCF) implements a number of Web services proto
 |WS-Coordination|[Web Services Coordination](https://go.microsoft.com/fwlink/?LinkId=95324)|  
 |WS-AtomicTransaction|[Web Services Atomic Transaction](https://go.microsoft.com/fwlink/?LinkId=95323)|  
   
- The <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <!--zz <xref:System.ServiceModel.Description.WSDLExporter>, <xref:System.ServiceModel.Description.WSDLImporter>, --> `System.ServiceModel.Description.MetadataImporter`, `System.ServiceModel.Description.WSDLImporter`, and <xref:System.ServiceModel.Description.MetadataResolver> classes provide support for the following metadata specifications:  
+ The <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <xref:System.ServiceModel.Description.WsdlExporter>, <xref:System.ServiceModel.Description.WsdlImporter>, and <xref:System.ServiceModel.Description.MetadataResolver> classes provide support for the following metadata specifications:  
   
 -   [XML Schema Part 1: Structures Second Edition](https://go.microsoft.com/fwlink/?LinkId=3536)  
   

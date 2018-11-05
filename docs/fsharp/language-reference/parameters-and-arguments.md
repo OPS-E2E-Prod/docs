@@ -105,6 +105,8 @@ For more information, see [Constructors (F#)](https://msdn.microsoft.com/library
 
 You can specify an optional parameter for a method by using a question mark in front of the parameter name. Optional parameters are interpreted as the F# option type, so you can query them in the regular way that option types are queried, by using a `match` expression with `Some` and `None`. Optional parameters are permitted only on members, not on functions created by using `let` bindings.
 
+You can pass existing optional values to method by parameter name, such as `?arg=None` or `?arg=Some(3)` or `?arg=arg`. This can be useful when building a method that passes optional arguments to another method.
+
 You can also use a function `defaultArg`, which sets a default value of an optional argument. The `defaultArg` function takes the optional parameter as the first argument and the default value as the second.
 
 The following example illustrates the use of optional parameters.
@@ -117,19 +119,58 @@ The output is as follows.
 Baud Rate: 9600 Duplex: Full Parity: false
 Baud Rate: 4800 Duplex: Half Parity: false
 Baud Rate: 300 Duplex: Half Parity: true
+Baud Rate: 9600 Duplex: Full Parity: false
+Baud Rate: 9600 Duplex: Full Parity: false
+Baud Rate: 4800 Duplex: Half Parity: false
 ```
+
+For the purposes of C# and Visual Basic interop you can use the attributes `[<Optional; DefaultParameterValue<(...)>]` in F#, so that callers will see an argument as optional. This is equivalent to defining the argument as optional in C# as in `MyMethod(int i = 3)`.
+
+```fsharp
+open System
+open System.Runtime.InteropServices
+type C = 
+    static member Foo([<Optional; DefaultParameterValue("Hello world")>] message) =
+        printfn "%s" message
+```
+
+The value given as argument to `DefaultParameterValue` must match the type of the parameter, i.e. the following is not allowed:
+
+```fsharp
+type C =
+    static member Wrong([<Optional; DefaultParameterValue("string")>] i:int) = ()
+```
+
+In this case, the compiler generates a warning and will ignore both attributes altogether. Note that the default value `null` needs to be type-annotated, as otherwise the compiler infers the wrong type, i.e. `[<Optional; DefaultParameterValue(null:obj)>] o:obj`.
 
 ## Passing by Reference
 
-Passing an F# value by reference involves the `byref` keyword, which specifies that the parameter is actually a pointer to the value being passed by reference. Any value passed into a method with a `byref` as the argument must be `mutable`.
+Passing an F# value by reference involves [byrefs](byrefs.md), which are managed pointer types. Guidance for which type to use is as follows:
+
+* Use `inref<'T>` if you only need to read the pointer.
+* Use `outref<'T>` if you only need to write to the pointer.
+* Use `byref<'T>` if you need to both read from and write to the pointer.
+
+```fsharp
+let example1 (x: inref<int>) = printfn "It's %d" x
+
+let example2 (x: outref<int>) = x <- x + 1
+
+let example3 (x: byref<int>) =
+    printfn "It'd %d" x
+    x <- x + 1
+
+// No need to make it mutable, since it's read-only
+let x = 1
+example1 &x
+
+// Needs to be mutable, since we write to it
+let mutable y = 2
+example2 &y
+example3 &y // Now 'y' is 3
+```
 
 Because the parameter is a pointer and the value is mutable, any changes to the value are retained after the execution of the function.
-
-You can accomplish the same thing with [Reference Cells](reference-cells.md), but it's important to note that **reference cells and `byref`s are not the same thing**. A reference cell is a container for a value that you can inspect and change the contents of, but this value lives on the heap and is equivalent to having a record with a mutable value contained within it. A `byref` is an actual pointer, so it is different underlying semantics and usage rules (which can be quite restrictive).
-
-The following examples illustrate the use of the `byref` keyword. Note that when you use a reference cell as a parameter, you must create a reference cell as a named value and use that as the parameter, not just add the `ref` operator as shown in the first call to `Increment` in the following code. Because creating a reference cell creates a copy of the underlying value, the first call just increments a temporary value.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3809.fs)]
 
 You can use a tuple as a return value to store any `out` parameters in .NET library methods. Alternatively, you can treat the `out` parameter as a `byref` parameter. The following code example illustrates both ways.
 
@@ -149,7 +190,7 @@ The following code illustrates both calling a .NET method that takes a parameter
 
 When run in a project, the output of the previous code is as follows:
 
-```
+```console
 a 1 10 Hello world 1 True
 "a"
 1

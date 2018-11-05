@@ -5,7 +5,7 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/25/2018
 ---
-# dotnet-build
+# dotnet build
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
@@ -17,14 +17,16 @@ ms.date: 05/25/2018
 
 # [.NET Core 2.x](#tab/netcore2x)
 ```
-dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--no-dependencies] [--no-incremental]
+dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--no-dependencies] [--no-incremental]
     [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+
 dotnet build [-h|--help]
 ```
 # [.NET Core 1.x](#tab/netcore1x)
 ```
-dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--no-dependencies] [--no-incremental] [-o|--output]
+dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--no-dependencies] [--no-incremental] [-o|--output]
     [-r|--runtime] [-v|--verbosity] [--version-suffix]
+
 dotnet build [-h|--help]
 ```
 ---
@@ -41,7 +43,7 @@ Building requires the *project.assets.json* file, which lists the dependencies o
 
 `dotnet build` uses MSBuild to build the project, so it supports both parallel and incremental builds. For more information, see [Incremental Builds](/visualstudio/msbuild/incremental-builds).
 
-In addition to its options, the `dotnet build` command accepts MSBuild options, such as `/p` for setting properties or `/l` to define a logger. For more information about these options, see the [MSBuild Command-Line Reference](/visualstudio/msbuild/msbuild-command-line-reference).
+In addition to its options, the `dotnet build` command accepts MSBuild options, such as `-p` for setting properties or `-l` to define a logger. For more information about these options, see the [MSBuild Command-Line Reference](/visualstudio/msbuild/msbuild-command-line-reference).
 
 Whether the project is executable or not is determined by the `<OutputType>` property in the project file. The following example shows a project that produces executable code:
 
@@ -55,9 +57,9 @@ In order to produce a library, omit the `<OutputType>` property. The main differ
 
 ## Arguments
 
-`PROJECT`
+`PROJECT | SOLUTION`
 
-The project file to build. If a project file is not specified, MSBuild searches the current working directory for a file that has a file extension that ends in *proj* and uses that file.
+The project or solution file to build. If a project or solution file is not specified, MSBuild searches the current working directory for a file that has a file extension that ends in either *proj* or *sln* and uses that file.
 
 ## Options
 

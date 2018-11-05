@@ -1,9 +1,12 @@
----
+﻿---
 title: What's new in .NET Core 2.1
 description: Learn about the new features found in .NET Core 2.1.
+dev_langs: 
+  - "csharp"
+  - "vb"
 author: rpetrusha
 ms.author: ronpet
-ms.date: 06/06/2018
+ms.date: 10/10/2018
 ---
 # What's new in .NET Core 2.1
 
@@ -60,7 +63,7 @@ A number of tools that were available only on a per project basis using [`Dotnet
 
 .NET Core 2.1 supports *Global Tools* -- that is, custom tools that are available globally from the command line. The extensibility model in previous versions of .NET Core made custom tools available on a per project basis only by using [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
 
-To install a Global Tool, you use the [dotnet tool install](..\tools\dotnet-tool-install.md) command. For example:
+To install a Global Tool, you use the [dotnet tool install](../tools/dotnet-tool-install.md) command. For example:
 
 ```console
 dotnet tool install -g dotnetsay
@@ -160,9 +163,11 @@ You can opt into tiered compilation in either of two ways.
 
 Without these types, when passing such items as a portion of an array or a section of a memory buffer, you have to make a copy of some portion of the data before passing it to a method. These types provide a virtual view of that data that eliminates the need for the additional memory allocation and copy operations.
 
-The following example uses a <xref:System.Span%601> instance to provide a virtual view of 10 elements of an array.
+The following example uses a <xref:System.Span%601> and <xref:System.Memory%601> instance to provide a virtual view of 10 elements of an array.
 
 [!CODE-csharp[Span\<T>](~/samples/core/whats-new/whats-new-in-21/cs/program.cs)]
+
+[!CODE-vb[Memory\<T>](~/samples/core/whats-new/whats-new-in-21/vb/program.vb)]
 
 ### Brotli compression
 
