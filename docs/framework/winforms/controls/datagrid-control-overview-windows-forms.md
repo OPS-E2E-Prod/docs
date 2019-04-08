@@ -29,7 +29,7 @@ ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
   
  If the <xref:System.Windows.Forms.DataGrid> is bound to data with multiple related tables, and if navigation is enabled on the grid, the grid will display expanders in each row. With an expander, the user can move from a parent table to a child table. Clicking a node displays the child table, and clicking a back button displays the original parent table. In this manner, the grid displays the hierarchical relationships between tables.  
   
- The following screen shot shows a DataGrid bound to data with multiple tables.  
+ The following screenshot shows a DataGrid bound to data with multiple tables.  
   
  ![A DataGrid bound to data with multiple tables](./media/vbcontrol1.gif "vbControl1")  
 A DataGrid bound to data with multiple tables  
@@ -134,6 +134,7 @@ The following illustration shows the objects included in the DataGrid control.
  Besides the common control events such as <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.Enter>, and <xref:System.Windows.Forms.DataGrid.Scroll>, the <xref:System.Windows.Forms.DataGrid> control supports events associated with editing and navigation within the grid. The <xref:System.Windows.Forms.DataGrid.CurrentCell%2A> property determines which cell is selected. The <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> event is raised when the user navigates to a new cell. When the user navigates to a new table through parent/child relations, the <xref:System.Windows.Forms.DataGrid.Navigate> event is raised. The <xref:System.Windows.Forms.DataGrid.BackButtonClick> event is raised when the user clicks the back button when the user is viewing a child table, and the <xref:System.Windows.Forms.DataGrid.ShowParentDetailsButtonClick> event is raised when the show/hide parent rows icon is clicked.  
   
 ## See also
+
 - [DataGrid Control](datagrid-control-windows-forms.md)
 - [How to: Bind the Windows Forms DataGrid Control to a Data Source](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
 - [How to: Add Tables and Columns to the Windows Forms DataGrid Control](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
