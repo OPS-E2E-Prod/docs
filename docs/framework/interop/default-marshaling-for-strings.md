@@ -86,6 +86,7 @@ The following table lists the marshaling options for strings when marshaled as a
 |`UnmanagedType.BStr`|A COM-style `BSTR` with a prefixed length and Unicode characters.|
 |`UnmanagedType.LPStr` (default)|A pointer to a null-terminated array of ANSI characters.|
 |`UnmanagedType.LPTStr`|A pointer to a null-terminated array of platform-dependent characters.|
+|`UnmanagedType.LPUTF8Str`|A pointer to a null-terminated array of UTF-8 encoded characters.|
 |`UnmanagedType.LPWStr`|A pointer to a null-terminated array of Unicode characters.|
 |`UnmanagedType.TBStr`|A COM-style `BSTR` with a prefixed length and platform-dependent characters.|
 |`VBByRefStr`|A value that enables Visual Basic .NET to change a string in unmanaged code and have the results reflected in managed code. This value is supported only for platform invoke. This is the default value in Visual Basic for `ByVal` strings.|
@@ -104,6 +105,8 @@ class StringLibAPI
     [DllImport("StringLib.dll")]
     public static extern void PassLPTStr([MarshalAs(UnmanagedType.LPTStr)] string s);
     [DllImport("StringLib.dll")]
+    public static extern void PassLPUTF8Str([MarshalAs(UnmanagedType.LPUTF8Str)] string s);
+    [DllImport("StringLib.dll")]
     public static extern void PassBStr([MarshalAs(UnmanagedType.BStr)] string s);
     [DllImport("StringLib.dll")]
     public static extern void PassAnsiBStr([MarshalAs(UnmanagedType.AnsiBStr)] string s);
@@ -114,18 +117,20 @@ class StringLibAPI
 
 ```vb
 Class StringLibAPI
-    Public Declare Auto Sub PassLPStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.LPStr)> s As String)
-    Public Declare Auto Sub PassLPWStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.LPWStr)> s As String)
-    Public Declare Auto Sub PassLPTStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.LPTStr)> s As String)
-    Public Declare Auto Sub PassBStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.BStr)> s As String)
-    Public Declare Auto Sub PassAnsiBStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.AnsiBStr)> s As String)
-    Public Declare Auto Sub PassTBStr Lib "StringLib.dll" _
-        (<MarshalAs(UnmanagedType.TBStr)> s As String)
+    Public Declare Auto Sub PassLPStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPStr)> s As String)
+    Public Declare Auto Sub PassLPWStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPWStr)> s As String)
+    Public Declare Auto Sub PassLPTStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPTStr)> s As String)
+    Public Declare Auto Sub PassLPUTF8Str Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.LPUTF8Str)> s As String)
+    Public Declare Auto Sub PassBStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.BStr)> s As String)
+    Public Declare Auto Sub PassAnsiBStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.AnsiBStr)> s As String)
+    Public Declare Auto Sub PassTBStr Lib "StringLib.dll" (
+        <MarshalAs(UnmanagedType.TBStr)> s As String)
 End Class
 ```
 
@@ -138,6 +143,7 @@ Strings are valid members of structures; however, <xref:System.Text.StringBuilde
 |`UnmanagedType.BStr`|A COM-style `BSTR` with a prefixed length and Unicode characters.|
 |`UnmanagedType.LPStr` (default)|A pointer to a null-terminated array of ANSI characters.|
 |`UnmanagedType.LPTStr`|A pointer to a null-terminated array of platform-dependent characters.|
+|`UnmanagedType.LPUTF8Str`|A pointer to a null-terminated array of UTF-8 encoded characters.|
 |`UnmanagedType.LPWStr`|A pointer to a null-terminated array of Unicode characters.|
 |`UnmanagedType.ByValTStr`|A fixed-length array of characters; the array's type is determined by the character set of the containing structure.|
 
@@ -222,7 +228,7 @@ In some circumstances, a fixed-length character buffer must be passed into unman
 
 The solution is to pass a <xref:System.Text.StringBuilder> buffer as the argument instead of a <xref:System.String>. A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`. It can also be initialized to a fixed length. For example, if you initialize a `StringBuilder` buffer to a capacity of `N`, the marshaler provides a buffer of size (`N`+1) characters. The +1 accounts for the fact that the unmanaged string has a null terminator while `StringBuilder` does not.
 
-For example, the Windows [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) API function (defined in *Windows.h*) requires that the caller pass a fixed-length character buffer to which the function writes the window's text. `LpString` points to a caller-allocated buffer of size `nMaxCount`. The caller is expected to allocate the buffer and set the `nMaxCount` argument to the size of the allocated buffer. The following example shows the `GetWindowText` function declaration as defined in *Windows.h*.
+For example, the Windows [`GetWindowText`](/windows/desktop/api/winuser/nf-winuser-getwindowtextw) API function (defined in *winuser.h*) requires that the caller pass a fixed-length character buffer to which the function writes the window's text. `LpString` points to a caller-allocated buffer of size `nMaxCount`. The caller is expected to allocate the buffer and set the `nMaxCount` argument to the size of the allocated buffer. The following example shows the `GetWindowText` function declaration as defined in *winuser.h*.
 
 ```cpp
 int GetWindowText(
@@ -235,7 +241,11 @@ int GetWindowText(
 A `StringBuilder` can be dereferenced and modified by the callee, provided it does not exceed the capacity of the `StringBuilder`. The following code example demonstrates how `StringBuilder` can be initialized to a fixed length.
 
 ```csharp
-internal static class WindowsAPI
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+
+internal static class NativeMethods
 {
     [DllImport("User32.dll")]
     internal static extern void GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
@@ -247,15 +257,17 @@ public class Window
     public String GetText()
     {
         StringBuilder sb = new StringBuilder(256);
-        WindowsAPI.GetWindowText(h, sb, sb.Capacity + 1);
+        NativeMethods.GetWindowText(h, sb, sb.Capacity + 1);
         return sb.ToString();
     }
 }
 ```
 
 ```vb
-Friend Class WindowsAPI
-    Friend Shared Declare Auto Sub GetWindowText Lib "User32.dll" _
+Imports System.Text
+
+Friend Class NativeMethods
+    Friend Declare Auto Sub GetWindowText Lib "User32.dll" _
         (hWnd As IntPtr, lpString As StringBuilder, nMaxCount As Integer)
 End Class
 
@@ -263,7 +275,7 @@ Public Class Window
     Friend h As IntPtr ' Friend handle to Window.
     Public Function GetText() As String
         Dim sb As New StringBuilder(256)
-        WindowsAPI.GetWindowText(h, sb, sb.Capacity + 1)
+        NativeMethods.GetWindowText(h, sb, sb.Capacity + 1)
         Return sb.ToString()
    End Function
 End Class
