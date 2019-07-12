@@ -194,9 +194,23 @@
       href: core/whats-new/dotnet-core-2-1.md
     - name: What's new in .NET Core 2.0
       href: core/whats-new/dotnet-core-2-0.md
+  - name: Application Compatibility
+    items:
+    - name: Evaluate breaking changes
+      href: core/compatibility/index.md
+    - name: Breaking change categories
+      href: core/compatibility/categories.md    
   - name: Tutorials
     href: core/tutorials/index.md
     items:
+    - name: Templates for the CLI
+      items:
+      - name: 1 - Create an item template
+        href: core/tutorials/cli-templates-create-item-template.md
+      - name: 2 - Create a project template
+        href: core/tutorials/cli-templates-create-project-template.md
+      - name: 3 - Create a template pack
+        href: core/tutorials/cli-templates-create-template-pack.md
     - name: Get started with .NET Core on macOS
       href: core/tutorials/using-on-macos.md
     - name: Get started with .NET Core on macOS using Visual Studio for Mac
@@ -213,8 +227,6 @@
       href: core/tutorials/aspnet-core.md
     - name: Hosting .NET Core from native code
       href: core/tutorials/netcore-hosting.md
-    - name: Create a custom template for dotnet new
-      href: core/tutorials/create-custom-template.md
   - name: Packages, Metapackages and Frameworks
     href: core/packages.md
   - name: Changes in CLI overview
@@ -296,8 +308,9 @@
   - name: .NET Core SDK Overview
     href: core/sdk.md
   - name: .NET Core CLI Tools
-    href: core/tools/index.md
     items:
+    - name: .NET Core CLI Overview
+      href: core/tools/index.md
     - name: Telemetry
       href: core/tools/telemetry.md
     - name: Global Tools
@@ -305,6 +318,8 @@
       items:
       - name: Create a Global Tool
         href: core/tools/global-tools-how-to-create.md
+    - name: Elevated access
+      href: core/tools/elevated-access.md
     - name: Extensibility Model
       href: core/tools/extensibility.md
     - name: Continuous Integration
@@ -524,8 +539,6 @@
           href: csharp/tutorials/intro-to-csharp/introduction-to-classes.md
     - name: Explore C# 6
       href: csharp/tutorials/exploration/csharp-6.yml
-    - name: Explore C# 7.0
-      href: csharp/tutorials/exploration/csharp-7.yml
     - name: Explore string interpolation - interactive
       href: csharp/tutorials/exploration/interpolated-strings.yml
     - name: Explore string interpolation - in your environment
