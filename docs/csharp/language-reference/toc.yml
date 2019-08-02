@@ -43,6 +43,8 @@
         href: keywords/void.md
       - name: var
         href: keywords/var.md
+      - name: Unmanaged types
+        href: builtin-types/unmanaged-types.md
       - name: Reference tables for types
         items:
         - name: Built-in types table
@@ -205,8 +207,6 @@
       items:
       - name: await
         href: keywords/await.md
-      - name: sizeof
-        href: keywords/sizeof.md
     - name: Access Keywords
       items:
       - name: base
@@ -329,12 +329,20 @@
       href: operators/lambda-operator.md
       displayName: lambda
     - name: ":: operator"
-      href: operators/namespace-alias-qualifer.md
+      href: operators/namespace-alias-qualifier.md
       displayName: "namespace alias qualifier"
+    - name: default operator
+      href: operators/default.md
+      displayName: default value, default literal, type default
+    - name: delegate operator
+      href: operators/delegate-operator.md
+      displayName: anonymous
     - name: nameof operator
       href: operators/nameof.md
     - name: new operator
       href: operators/new-operator.md
+    - name: sizeof operator
+      href: operators/sizeof.md
     - name: stackalloc operator
       href: operators/stackalloc.md
     - name: true and false operators
