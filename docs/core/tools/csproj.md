@@ -120,13 +120,13 @@ If the project has multiple target frameworks, the results of the command should
 
 ### Sdk attribute
 
-The root `<Project>` element of the *.csproj* file has a new attribute called `Sdk`. `Sdk` specifies which SDK will be used by the project. The SDK, as the [layering document](cli-msbuild-architecture.md) describes, is a set of MSBuild [tasks](/visualstudio/msbuild/msbuild-tasks) and [targets](/visualstudio/msbuild/msbuild-targets) that can build .NET Core code. We ship three main SDKs with the .NET Core tools and an additional two SDKs when using .NET Core 3.0 Preview:
+The root `<Project>` element of the *.csproj* file has a new attribute called `Sdk`. `Sdk` specifies which SDK will be used by the project. The SDK, as the [layering document](cli-msbuild-architecture.md) describes, is a set of MSBuild [tasks](/visualstudio/msbuild/msbuild-tasks) and [targets](/visualstudio/msbuild/msbuild-targets) that can build .NET Core code. The following SDKs are available for .NET Core:
 
 1. The .NET Core SDK with the ID of `Microsoft.NET.Sdk`
 2. The .NET Core web SDK with the ID of `Microsoft.NET.Sdk.Web`
 3. The .NET Core Razor Class Library SDK with the ID of `Microsoft.NET.Sdk.Razor`
-4. The .NET Core Worker Service with the ID of `Microsoft.NET.Sdk.Worker` (.NET Core 3.0 Preview)
-5. The .NET Core WinForms and WPF with the ID of `Microsoft.NET.Sdk.WindowsDesktop` (.NET Core 3.0 Preview)
+4. The .NET Core Worker Service with the ID of `Microsoft.NET.Sdk.Worker` (since .NET Core 3.0)
+5. The .NET Core WinForms and WPF with the ID of `Microsoft.NET.Sdk.WindowsDesktop` (since .NET Core 3.0)
 
 You need to have the `Sdk` attribute set to one of those IDs on the `<Project>` element in order to use the .NET Core tools and build your code.
 
@@ -271,7 +271,7 @@ Here is the complete list of [SPDX license identifiers](https://spdx.org/license
 
 The exact syntax of the license expressions is described below in [ABNF](https://tools.ietf.org/html/rfc5234).
 
-```cli
+```abnf
 license-id            = <short form license identifier from https://spdx.org/spdx-specification-21-web-version#h.luq9dgcle9mo>
 
 license-exception-id  = <short form license exception identifier from https://spdx.org/spdx-specification-21-web-version#h.ruv3yl8g6czd>
@@ -348,6 +348,12 @@ Specifies the URL for the repository where the source code for the package resid
 ### RepositoryType
 
 Specifies the type of the repository. Default is "git".
+
+### RepositoryBranch
+Specifies the name of the source branch in the repository. When the project is packaged in a NuGet package, it's added to the package metadata.
+
+### RepositoryCommit
+Optional repository commit or changeset to indicate which source the package was built against. `RepositoryUrl` must also be specified for this property to be included. When the project is packaged in a NuGet package, this commit or changeset is added to the package metadata.
 
 ### NoPackageAnalysis
 
