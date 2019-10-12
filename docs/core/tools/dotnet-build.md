@@ -1,7 +1,7 @@
 ---
 title: dotnet build command
 description: The dotnet build command builds a project and all of its dependencies.
-ms.date: 08/08/2019
+ms.date: 10/07/2019
 ---
 # dotnet build
 
@@ -17,7 +17,7 @@ ms.date: 08/08/2019
 
 ## Synopsis
 
-```console
+```dotnetcli
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--interactive] [--no-dependencies]
     [--no-incremental] [--no-restore] [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 
@@ -30,7 +30,7 @@ The `dotnet build` command builds the project and its dependencies into a set of
 
 If the project has third-party dependencies, such as libraries from NuGet, they're resolved from the NuGet cache and aren't available with the project's built output. With that in mind, the product of `dotnet build` isn't ready to be transferred to another machine to run. This is in contrast to the behavior of the .NET Framework in which building an executable project (an application) produces output that's runnable on any machine where the .NET Framework is installed. To have a similar experience with .NET Core, you need to use the [dotnet publish](dotnet-publish.md) command. For more information, see [.NET Core Application Deployment](../deploying/index.md).
 
-Building requires the *project.assets.json* file, which lists the dependencies of your application. The file is created when [`dotnet restore`](dotnet-restore.md) is executed. Without the assets file in place, the tooling can't resolve reference assemblies, which results in errors. With .NET Core 1.x SDK, you needed to explicitly run the `dotnet restore` before running `dotnet build`. Starting with .NET Core 2.0 SDK, `dotnet restore` runs implicitly when you run `dotnet build`. If you want to disable implicit restore when running the build command, you can pass the `--no-restore` option.
+Building requires the *project.assets.json* file, which lists the dependencies of your application. The file is created when [`dotnet restore`](dotnet-restore.md) is executed. Without the assets file in place, the tooling can't resolve reference assemblies, which results in errors. With .NET Core 1.x SDK, you needed to explicitly run `dotnet restore` before running `dotnet build`. Starting with .NET Core 2.0 SDK, `dotnet restore` runs implicitly when you run `dotnet build`. If you want to disable implicit restore when running the build command, you can pass the `--no-restore` option.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
@@ -60,9 +60,9 @@ The project or solution file to build. If a project or solution file isn't speci
 
 ## Options
 
-* **`-c|--configuration {Debug|Release}`**
+* **`-c|--configuration {CONFIGURATION}`**
 
-  Defines the build configuration. The default value is `Debug`.
+  Defines the build configuration. The default for most projects is `Debug`, but you can override the build configuration settings in your project.
 
 * **`-f|--framework <FRAMEWORK>`**
 
@@ -116,30 +116,30 @@ The project or solution file to build. If a project or solution file isn't speci
 
 * Build a project and its dependencies:
 
-  ```console
+  ```dotnetcli
   dotnet build
   ```
 
 * Build a project and its dependencies using Release configuration:
 
-  ```console
+  ```dotnetcli
   dotnet build --configuration Release
   ```
 
 * Build a project and its dependencies for a specific runtime (in this example, Ubuntu 18.04):
 
-  ```console
+  ```dotnetcli
   dotnet build --runtime ubuntu.18.04-x64
   ```
 
 * Build the project and use the specified NuGet package source during the restore operation (.NET Core 2.0 SDK and later versions):
 
-  ```console
+  ```dotnetcli
   dotnet build --source c:\packages\mypackages
   ```
 
 * Build the project and set version 1.2.3.4 as a build parameter using the `-p` [MSBuild option](#msbuild):
 
-  ```console
+  ```dotnetcli
   dotnet build -p:Version=1.2.3.4
   ```
