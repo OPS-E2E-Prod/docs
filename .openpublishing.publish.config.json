@@ -77,5 +77,8 @@
       "url": "https://github.com/dotnet/machinelearning-samples",
       "branch": "master"
     }
-  ]
+  ],
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }
