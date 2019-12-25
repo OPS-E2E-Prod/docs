@@ -21,9 +21,9 @@
   },
   "docsets_to_publish": [
     {
-      "docset_name": "core-docs",
+      "docset_name": "e2eprod-core-docs",
       "build_source_folder": ".",
-      "build_output_subfolder": ".",
+      "build_output_subfolder": "e2eprod-core-docs",
       "locale": "en-us",
       "xref_query_tags": [
         "/uwp/api"
