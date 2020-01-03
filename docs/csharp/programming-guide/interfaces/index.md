@@ -9,7 +9,7 @@ ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
 ---
 # Interfaces (C# Programming Guide)
 
-An interface contains definitions for a group of related functionalities that a [class](../../language-reference/keywords/class.md) or a [struct](../../language-reference/keywords/struct.md) can implement.
+An interface contains definitions for a group of related functionalities that a non-abstract [class](../../language-reference/keywords/class.md) or a [struct](../../language-reference/keywords/struct.md) must implement.
   
 By using interfaces, you can, for example, include behavior from multiple sources in a class. That capability is important in C# because the language doesn't support multiple inheritance of classes. In addition, you must use an interface if you want to simulate inheritance for structs, because they can't actually inherit from another struct or class.  
   
@@ -56,17 +56,17 @@ An interface has the following properties:
 [Explicit Interface Implementation](explicit-interface-implementation.md)  
  Explains how to create a class member that’s specific to an interface.  
   
- [How to: Explicitly Implement Interface Members](how-to-explicitly-implement-interface-members.md)  
+ [How to explicitly implement interface members](how-to-explicitly-implement-interface-members.md)  
  Provides an example of how to explicitly implement members of interfaces.  
   
- [How to: Explicitly Implement Members of Two Interfaces](how-to-explicitly-implement-members-of-two-interfaces.md)  
+ [How to explicitly implement members of two interfaces](how-to-explicitly-implement-members-of-two-interfaces.md)  
  Provides an example of how to explicitly implement members of interfaces with inheritance.  
   
 ## <a name="BKMK_RelatedSections"></a> Related Sections
 
 - [Interface Properties](../classes-and-structs/interface-properties.md)  
 - [Indexers in Interfaces](../indexers/indexers-in-interfaces.md)  
-- [How to:  Implement Interface Events](../events/how-to-implement-interface-events.md)  
+- [How to implement interface events](../events/how-to-implement-interface-events.md)
 - [Classes and Structs](../classes-and-structs/index.md)  
 - [Inheritance](../classes-and-structs/inheritance.md)  
 - [Methods](../classes-and-structs/methods.md)  
