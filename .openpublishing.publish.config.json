@@ -21,16 +21,16 @@
   },
   "docsets_to_publish": [
     {
-      "docset_name": "core-docs",
+      "docset_name": "e2eprod-core-docs",
       "build_source_folder": ".",
-      "build_output_subfolder": ".",
+      "build_output_subfolder": "e2eprod-core-docs",
       "locale": "en-us",
       "xref_query_tags": [
         "/uwp/api"
       ],
       "monikers": [],
       "filemap_share_depots": [
-        "VS.dotnet-api-docs"
+        "MSDN.e2e-prod-dotnetapidocs"
       ],
       "open_to_public_contributors": true,
       "type_mapping": {
@@ -45,7 +45,7 @@
     }
   ],
   "notification_subscribers": [],
-  "branches_to_filter": [],
+  "branches_to_filter": ["master-sync-work", "live-sync-work"],
   "skip_source_output_uploading": false,
   "dependent_repositories": [
     {
