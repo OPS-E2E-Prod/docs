@@ -26,7 +26,7 @@
       "build_output_subfolder": "e2eprod-core-docs",
       "locale": "en-us",
       "xref_query_tags": [
-        "/uwp/api"
+        "/dotnet","/uwp/api"
       ],
       "monikers": [],
       "filemap_share_depots": [
