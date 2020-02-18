@@ -27,9 +27,13 @@
       "build_source_folder": ".",
       "build_output_subfolder": "e2eprod-core-docs",
       "locale": "en-us",
-      "xref_query_tags": ["/dotnet", "/uwp/api"],
+      "xref_query_tags": [
+        "/dotnet","/uwp/api"
+      ],
       "monikers": [],
-      "filemap_share_depots": ["MSDN.e2e-prod-dotnetapidocs"],
+      "filemap_share_depots": [
+        "MSDN.e2e-prod-dotnetapidocs"
+      ],
       "open_to_public_contributors": true,
       "type_mapping": {
         "ZonePivotGroups": "Toc",
