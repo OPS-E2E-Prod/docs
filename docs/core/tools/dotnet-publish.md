@@ -14,7 +14,7 @@ ms.date: 02/24/2020
 ## Synopsis
 
 ```dotnetcli
-dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration] 
+dotnet publish [<PROJECT>|<SOLUTION>] [-c|--configuration]
     [-f|--framework] [--force] [--interactive] [--manifest]
     [--no-build] [--no-dependencies] [--no-restore] [--nologo]
     [-o|--output] [-r|--runtime] [--self-contained]
@@ -42,7 +42,7 @@ The `dotnet publish` command's output is ready for deployment to a hosting syste
   
   * `PROJECT` is the path and filename of a [C#](csproj.md), F#, or Visual Basic project file, or the path to a directory that contains a C#, F#, or Visual Basic project file. If the directory is not specified, it defaults to the current directory.
 
-  * `SOLUTION` is the path and filename of a solution file (*.sln* extension), or the path to a directory that contains a solution file. If the directory is not specified, it defaults to the current directory. **Available starting with .NET Core 3.0 SDK.** 
+  * `SOLUTION` is the path and filename of a solution file (*.sln* extension), or the path to a directory that contains a solution file. If the directory is not specified, it defaults to the current directory. Available since .NET Core 3.0 SDK.
 
 ## Options
 
@@ -62,9 +62,9 @@ The `dotnet publish` command's output is ready for deployment to a hosting syste
 
   Prints out a short help for the command.
 
-- **`--interactive`** **Available starting with .NET Core 3.0 SDK.**
+- **`--interactive`**
 
-  Allows the command to stop and wait for user input or action. For example, to complete authentication. 
+  Allows the command to stop and wait for user input or action. For example, to complete authentication. Available since .NET Core 3.0 SDK.
 
 - **`--manifest <PATH_TO_MANIFEST_FILE>`**
 
@@ -78,9 +78,9 @@ The `dotnet publish` command's output is ready for deployment to a hosting syste
 
   Ignores project-to-project references and only restores the root project.
 
-- **`--nologo`** **Available starting with .NET Core 3.0 SDK.**
+- **`--nologo`**
 
-  Doesn't display the startup banner or the copyright message. 
+  Doesn't display the startup banner or the copyright message. Available since .NET Core 3.0 SDK.
 
 - **`--no-restore`**
 
@@ -96,9 +96,9 @@ The `dotnet publish` command's output is ready for deployment to a hosting syste
 
   Publishes the .NET Core runtime with your application so the runtime doesn't need to be installed on the target machine. Default is `true` if a runtime identifier is specified. For more information, see [.NET Core application publishing](../deploying/index.md) and [Publish .NET Core apps with the .NET Core CLI](../deploying/deploy-with-cli.md).
 
-- **`--no-self-contained`**  **Available starting with .NET Core 3.0 SDK.**
+- **`--no-self-contained`**
 
-  Equivalent to `--self-contained false`.
+  Equivalent to `--self-contained false`. Available since .NET Core 3.0 SDK.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -106,7 +106,7 @@ The `dotnet publish` command's output is ready for deployment to a hosting syste
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
+  Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`. Default value is `minimal`.
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 
@@ -163,5 +163,4 @@ The `dotnet publish` command's output is ready for deployment to a hosting syste
 - [Target frameworks](../../standard/frameworks.md)
 - [Runtime IDentifier (RID) catalog](../rid-catalog.md)
 - [Working with macOS Catalina Notarization](../install/macos-notarization-issues.md)
- For more information, see he following resources:
 - [Directory structure of a published application](/aspnet/core/hosting/directory-structure)
