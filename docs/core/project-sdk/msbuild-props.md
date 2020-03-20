@@ -1,7 +1,7 @@
 ---
 title: MSBuild properties for Microsoft.NET.Sdk
 description: Reference for the MSBuild properties that are understood by the .NET Core SDK.
-ms.date: 02/02/2020
+ms.date: 02/14/2020
 ms.topic: reference
 ---
 # MSBuild properties for .NET Core SDK projects
@@ -13,25 +13,9 @@ This page describes MSBuild properties for configuring .NET Core projects.
 
 ## Framework properties
 
-- [NetStandardImplicitPackageVersion](#netstandardimplicitpackageversion)
 - [TargetFramework](#targetframework)
 - [TargetFrameworks](#targetframeworks)
-
-### NetStandardImplicitPackageVersion
-
-> [!NOTE]
-> This property only applies to projects using `netstandard1.x`. It doesn't apply to projects that use `netstandard2` and later.
-
-Use the `NetStandardImplicitPackageVersion` property when you want to specify a framework version that's lower than the [metapackage](../packages.md#metapackages) version. The project file in the following example targets `netstandard1.3` but uses the 1.6.0 version of `NETStandard.Library`.
-
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-  </PropertyGroup>
-</Project>
-```
+- [NetStandardImplicitPackageVersion](#netstandardimplicitpackageversion)
 
 ### TargetFramework
 
@@ -63,6 +47,22 @@ Use the `TargetFrameworks` property when you want your app to target multiple pl
 ```
 
 For more information, see [Target frameworks in SDK-style projects](../../standard/frameworks.md).
+
+### NetStandardImplicitPackageVersion
+
+> [!NOTE]
+> This property only applies to projects using `netstandard1.x`. It doesn't apply to projects that use `netstandard2.x`.
+
+Use the `NetStandardImplicitPackageVersion` property when you want to specify a framework version that's lower than the [metapackage](../packages.md#metapackages) version. The project file in the following example targets `netstandard1.3` but uses the 1.6.0 version of `NETStandard.Library`.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+  </PropertyGroup>
+</Project>
+```
 
 ## Publish properties
 
@@ -132,6 +132,7 @@ For more information, see [C# language versioning](../../csharp/language-referen
 ## NuGet packages
 
 - [PackageReference](#packagereference)
+- [AssetTargetFallback](#assettargetfallback)
 
 ### PackageReference
 
@@ -147,6 +148,21 @@ The `PackageReference` item lets you specify a NuGet dependency. For example, yo
 ```
 
 For more information, see [Package references in project files](/nuget/consume-packages/package-references-in-project-files).
+
+### AssetTargetFallback
+
+The `AssetTargetFallback` property lets you specify additional compatible framework versions for projects that your project references and NuGet packages that your project consumes. For example, if you specify a package dependency using `PackageReference` but that package doesn't contain assets that are compatible with your projects's `TargetFramework`, the `AssetTargetFallback` property comes into play. The compatibility of the referenced package is rechecked using each target framework that's specified in `AssetTargetFallback`.
+
+You can set the `AssetTargetFallback` property to one or more [target framework versions](../../standard/frameworks.md#supported-target-framework-versions).
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  ...
+  <PropertyGroup>
+    <AssetTargetFallback>net461</AssetTargetFallback>
+  </PropertyGroup>
+</Project>
+```
 
 ### Pack and restore targets
 

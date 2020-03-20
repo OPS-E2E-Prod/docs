@@ -65,7 +65,7 @@ so your application can process JSON responses.
 
 You'll need the `System.Runtime.Serialization.Json` package for this application. Add it to your project by running the following [.NET CLI](../../core/tools/dotnet-add-package.md) command:
 
-```console
+```dotnetcli
 dotnet add package System.Text.Json
 ```
 
@@ -208,7 +208,7 @@ The JSON serializer will ignore information that is not included in the class ty
 This feature makes it easier to create types that work with only a subset of the fields in
 the JSON packet.
 
-Now that you've created the type, let's deserialize it. 
+Now that you've created the type, let's deserialize it.
 
 Next, you'll use the serializer to convert JSON into C# objects. Replace the call to
 <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> in your `ProcessRepositories` method with the following three lines:
