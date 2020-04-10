@@ -1,6 +1,8 @@
-- name: .NET Core guide
-  href: index.md
-- name: About .NET Core
+- name: .NET Core documentation
+  href: index.yml
+- name: Introduction to .NET Core
+  href: introduction.md
+- name: .NET Core overview
   href: about.md
 - name: Install
   items:
@@ -288,6 +290,8 @@
     href: deploying/creating-nuget-packages.md
   - name: Self-contained deployment runtime roll forward
     href: deploying/runtime-patch-selection.md
+  - name: Trim self-contained deployments and executables
+    href: deploying/trim-self-contained.md
   - name: Runtime package store
     href: deploying/runtime-store.md
 - name: Docker
