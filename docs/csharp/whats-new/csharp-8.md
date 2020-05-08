@@ -70,7 +70,7 @@ The compiler warns you when it needs to create a defensive copy.  The `Distance`
 public readonly double Distance => Math.Sqrt(X * X + Y * Y);
 ```
 
-Notice that the `readonly` modifier is necessary on a read-only property. The compiler doesn't assume `get` accessors don't modify state; you must declare `readonly` explicitly. Auto-implemented properties are an exception; the compiler will treat all auto-implemented getters as readonly, so here there's no need to add the `readonly` modifier to the `X` and `Y` properties.
+Notice that the `readonly` modifier is necessary on a read-only property. The compiler doesn't assume `get` accessors don't modify state; you must declare `readonly` explicitly. Auto-implemented properties are an exception; the compiler will treat all auto-implemented getters as `readonly`, so here there's no need to add the `readonly` modifier to the `X` and `Y` properties.
 
 The compiler does enforce the rule that `readonly` members don't modify state. The following method won't compile unless you remove the `readonly` modifier:
 
@@ -82,13 +82,15 @@ public readonly void Translate(int xOffset, int yOffset)
 }
 ```
 
-This feature lets you specify your design intent so the compiler can enforce it, and make optimizations based on that intent. You can learn more about readonly members in the language reference article on [`readonly`](../language-reference/keywords/readonly.md#readonly-member-examples).
+This feature lets you specify your design intent so the compiler can enforce it, and make optimizations based on that intent.
+
+For more information, see the [`readonly` instance members](../language-reference/builtin-types/struct.md#readonly-instance-members) section of the [Structure types](../language-reference/builtin-types/struct.md) article.
 
 ## Default interface methods
 
 You can now add members to interfaces and provide an implementation for those members. This language feature enables API authors to add methods to an interface in later versions without breaking source or binary compatibility with existing implementations of that interface. Existing implementations *inherit* the default implementation. This feature also enables C# to interoperate with APIs that target Android or Swift, which support similar features. Default interface methods also enable scenarios similar to a "traits" language feature.
 
-Default interface methods affects many scenarios and language elements. Our first tutorial covers [updating an interface with default implementations](../tutorials/default-interface-methods-versions.md). Other tutorials and reference updates are coming in time for general release.
+Default interface methods affect many scenarios and language elements. Our first tutorial covers [updating an interface with default implementations](../tutorials/default-interface-methods-versions.md). Other tutorials and reference updates are coming in time for general release.
 
 ## More patterns in more places
 
@@ -175,7 +177,7 @@ public static decimal ComputeSalesTax(Address location, decimal salePrice) =>
     location switch
     {
         { State: "WA" } => salePrice * 0.06M,
-        { State: "MN" } => salePrice * 0.75M,
+        { State: "MN" } => salePrice * 0.075M,
         { State: "MI" } => salePrice * 0.05M,
         // other cases removed for brevity...
         _ => 0M
@@ -464,7 +466,7 @@ The range can then be used inside the `[` and `]` characters:
 var text = words[phrase];
 ```
 
-Not only arrays support indices and ranges. You also can use indices and ranges with [string](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>, or <xref:System.ReadOnlySpan%601>. For more information, see [Type support for indices and ranges](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
+Not only arrays support indices and ranges. You can also use indices and ranges with [string](../language-reference/builtin-types/reference-types.md#the-string-type), <xref:System.Span%601>, or <xref:System.ReadOnlySpan%601>. For more information, see [Type support for indices and ranges](../tutorials/ranges-indexes.md#type-support-for-indices-and-ranges).
 
 You can explore more about indices and ranges in the tutorial on [indices and ranges](../tutorials/ranges-indexes.md).
 
@@ -519,7 +521,7 @@ Starting with C# 8.0, if the result of a [stackalloc](../language-reference/oper
 
 ```csharp
 Span<int> numbers = stackalloc[] { 1, 2, 3, 4, 5, 6 };
-var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6 ,8 });
+var ind = numbers.IndexOfAny(stackalloc[] { 2, 4, 6, 8 });
 Console.WriteLine(ind);  // output: 1
 ```
 
