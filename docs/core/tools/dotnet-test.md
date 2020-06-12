@@ -64,7 +64,7 @@ Where `Microsoft.NET.Test.Sdk` is the test host, `xunit` is the test framework. 
 
 - **`--blame`**
 
-  Runs the tests in blame mode. This option is helpful in isolating problematic tests that cause the test host to crash. When a crash is detected, it creates an sequence file in `TestResults/<Guid>/<Guid>_Sequence.xml` that captures the order of tests that were run before the crash.
+  Runs the tests in blame mode. This option is helpful in isolating problematic tests that cause the test host to crash. When a crash is detected, it creates a sequence file in `TestResults/<Guid>/<Guid>_Sequence.xml` that captures the order of tests that were run before the crash.
 
 - **`-c|--configuration <CONFIGURATION>`**
 
@@ -73,6 +73,10 @@ Where `Microsoft.NET.Test.Sdk` is the test host, `xunit` is the test framework. 
 - **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
   Enables data collector for the test run. For more information, see [Monitor and analyze test run](https://aka.ms/vstest-collect).
+  
+  To collect code coverage on any platform that is supported by .NET Core, install [Coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/README.md) and use the `--collect:"XPlat Code Coverage"` option.
+
+  On Windows, you can collect code coverage by using the `--collect "Code Coverage"` option. This option generates a *.coverage* file, which can be opened in Visual Studio 2019 Enterprise. For more information, see [Use code coverage](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested) and [Customize code coverage analysis](/visualstudio/test/customizing-code-coverage-analysis).
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
@@ -124,7 +128,7 @@ Where `Microsoft.NET.Test.Sdk` is the test host, `xunit` is the test framework. 
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  The `.runsettings` file to use for running the tests. Note that the `TargetPlatform` element (x86|x64) has no effect for `dotnet test`. To run tests that target x86, install the x86 version of .NET Core. The bitness of the *dotnet.exe* that is on the path is what will be used for running tests. For more information, see the following resources:
+  The `.runsettings` file to use for running the tests. The `TargetPlatform` element (x86|x64) has no effect for `dotnet test`. To run tests that target x86, install the x86 version of .NET Core. The bitness of the *dotnet.exe* that is on the path is what will be used for running tests. For more information, see the following resources:
 
   - [Configure unit tests by using a `.runsettings` file.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
   - [Configure a test run](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)
@@ -165,13 +169,25 @@ Where `Microsoft.NET.Test.Sdk` is the test host, `xunit` is the test framework. 
   dotnet test --logger trx
   ```
 
+- Run the tests in the project in the current directory, and generate a code coverage file (after installing [Coverlet](https://github.com/tonerdo/coverlet/blob/master/README.md)):
+
+  ```dotnetcli
+  dotnet test --collect:"XPlat Code Coverage"
+  ```
+
+- Run the tests in the project in the current directory, and generate a code coverage file (Windows only):
+
+  ```dotnetcli
+  dotnet test --collect "Code Coverage"
+  ```
+
 - Run the tests in the project in the current directory, and log with detailed verbosity to the console:
 
   ```dotnetcli
   dotnet test --logger "console;verbosity=detailed"
   ```
-  
-  - Run the tests in the project in the current directory, and report tests that were in progress when the test host crashed:
+
+- Run the tests in the project in the current directory, and report tests that were in progress when the test host crashed:
 
   ```dotnetcli
   dotnet test --blame
@@ -189,6 +205,7 @@ Where `Microsoft.NET.Test.Sdk` is the test host, `xunit` is the test framework. 
 | -------------- | --------------------------------------------------------------------------------------------------------- |
 | MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>Name</li><li>TestCategory</li><li>Priority</li></ul>                                   |
 
 The `<operator>` describes the relationship between the property and the value:
 
