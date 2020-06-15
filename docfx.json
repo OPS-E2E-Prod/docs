@@ -158,7 +158,8 @@
         "docs/azure/sdk/**/**.yml": "https://github.com/azure/azure-sdk-for-net",
         "docs/fsharp/**/**.md": "https://github.com/Microsoft/visualfsharp",
         "docs/machine-learning/**/**.md": "https://github.com/dotnet/machinelearning",
-        "docs/standard/data/sqlite/**/*.md": "https://github.com/aspnet/EntityFrameworkCore"
+        "docs/standard/data/sqlite/**/*.md": "https://github.com/aspnet/EntityFrameworkCore",
+        "docs/spark/**/**.md": "https://github.com/dotnet/spark"
       },
       "ms.prod": {
         "_csharplang/**/*.md": "dotnet-csharp",
@@ -253,7 +254,7 @@
         "docs/framework/xaml-services/**/**.md": "Thraka",
         "docs/fsharp/**/**.md": "cartermp",
         "docs/machine-learning/**/**.md": "luisquintanilla",
-        "docs/spark/**/**.md": "mamccrea",
+        "docs/spark/**/**.md": "luisquintanilla",
         "docs/standard/**/**.md": "gewarren",
         "docs/standard/analyzers/**/**.md": "IEvangelist",
         "docs/standard/assembly/**/**.md": "IEvangelist",
@@ -341,7 +342,7 @@
         "docs/framework/xaml-services/**/**.md": "adegeo",
         "docs/fsharp/**/**.md": "phcart",
         "docs/machine-learning/**/**.md": "luquinta",
-        "docs/spark/**/**.md": "mamccrea",
+        "docs/spark/**/**.md": "luquinta",
         "docs/standard/**/**.md": "gewarren",
         "docs/standard/analyzers/**/**.md": "dapine",
         "docs/standard/assembly/**/**.md": "dapine",

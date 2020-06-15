@@ -1,5 +1,6 @@
 ---
 title: "Consuming the Task-based Asynchronous Pattern"
+description: Learn to consume the Task-based Asynchronous Pattern (TAP) when working with asynchronous operations.
 ms.date: "03/30/2017"
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -220,7 +221,7 @@ string [] pages = await Task.WhenAll(
  You can use the same exception-handling techniques we discussed in the previous void-returning scenario:
 
 ```csharp
-Task [] asyncOps =
+Task<string> [] asyncOps =
     (from url in urls select DownloadStringAsync(url)).ToArray();
 try
 {
@@ -829,6 +830,6 @@ private static void Produce(int data)
 
 ## See also
 
-- [Task-based Asynchronous Pattern (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)
-- [Implementing the Task-based Asynchronous Pattern](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)
-- [Interop with Other Asynchronous Patterns and Types](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)
+- [Task-based Asynchronous Pattern (TAP)](task-based-asynchronous-pattern-tap.md)
+- [Implementing the Task-based Asynchronous Pattern](implementing-the-task-based-asynchronous-pattern.md)
+- [Interop with Other Asynchronous Patterns and Types](interop-with-other-asynchronous-patterns-and-types.md)
