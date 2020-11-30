@@ -367,6 +367,8 @@ items:
       href: ../core/additional-tools/index.md
     - name: .NET uninstall tool
       href: ../core/additional-tools/uninstall-tool.md
+    - name: Generate self-signed certificates
+      href: ../core/additional-tools/self-signed-certificates-guide.md
     - name: WCF web service reference provider
       href: ../core/additional-tools/wcf-web-service-reference-guide.md
     - name: WCF service utility
@@ -385,9 +387,12 @@ items:
     - name: Managed debuggers
       href: ../core/diagnostics/managed-debuggers.md
     - name: Dumps
-      href: ../core/diagnostics/dumps.md
-    - name: Debug Linux dumps
-      href: ../core/diagnostics/debug-linux-dumps.md
+      items:
+      - name: Overview
+        displayName: dumps
+        href: ../core/diagnostics/dumps.md
+      - name: Linux dumps
+        href: ../core/diagnostics/debug-linux-dumps.md
     - name: EventCounters
       href: ../core/diagnostics/event-counters.md
     - name: EventPipe
@@ -2249,7 +2254,7 @@ items:
     - name: Use the Windows Compatibility Pack
       href: ../core/porting/windows-compat-pack.md
     - name: Port Windows Forms projects
-      href: ../core/porting/winforms.md
+      href: /dotnet/desktop/winforms/migration/?view=netdesktop-5.0
     - name: Port WPF projects
       href: /dotnet/desktop/wpf/migration/convert-project-from-net-framework
     - name: Port C++/CLI projects
