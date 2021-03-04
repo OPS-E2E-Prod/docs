@@ -22,7 +22,7 @@ You'll start by installing Dapr on your development computer. Once complete, you
 
 1. [Initialize Dapr](https://docs.dapr.io/getting-started/install-dapr/). This step sets up your development environment by installing the latest Dapr binaries and container images.
 
-1. Install the [.NET Core 3 Development Tools](https://dotnet.microsoft.com/download/dotnet-core/3.1) for .NET Core 3.1.
+1. Install the [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet/3.1).
 
 Now that Dapr is installed, it's time to build your first Dapr application!
 
@@ -56,7 +56,7 @@ You'll start by building a simple .NET Console application that consumes the [Da
 
 Next, you'll use the Dapr [state management building block](https://docs.dapr.io/developing-applications/building-blocks/state-management/state-management-overview/) to implement a stateful counter in the program.
 
-You can invoke Dapr APIs across any development platform using Dapr's native support for HTTP and gRPC. However, .NET Developers will find the Dapr .NET SDK more natural and intuitive. It provides a strongly-typed .NET client to call the Dapr APIs. The .NET SDK also tightly integrates with ASP.NET Core.
+You can invoke Dapr APIs across any development platform using Dapr's native support for HTTP and gRPC. However, .NET Developers will find the Dapr .NET SDK more natural and intuitive. It provides a strongly typed .NET client to call the Dapr APIs. The .NET SDK also tightly integrates with ASP.NET Core.
 
 1. From the terminal window, add the `Dapr.Client` NuGet package to your application:
 
@@ -204,7 +204,7 @@ In the first example, you created a simple .NET console application that ran sid
 
 In the next example, you'll create a multi-container application. You'll also use the [Dapr service invocation](service-invocation.md) building block to communicate between services. The solution will consist of a web application that retrieves weather forecasts from a web API. They will each run in a Docker container. You'll use Docker Compose to run the container locally and enable debugging capabilities.
 
-Make sure you've configured your local environment for Dapr and installed the [.NET Core 3 Development Tools](https://dotnet.microsoft.com/download/dotnet-core/3.1) (instructions are available at the beginning of this chapter).
+Make sure you've configured your local environment for Dapr and installed the [.NET Core 3 Development Tools](https://dotnet.microsoft.com/download/dotnet/3.1) (instructions are available at the beginning of this chapter).
 
 Additionally, you'll need complete this sample using [Visual Studio 2019](https://visualstudio.microsoft.com/downloads) with the **.NET Core cross-platform development** workload installed.
 
@@ -222,7 +222,7 @@ Additionally, you'll need complete this sample using [Visual Studio 2019](https:
 
    ![Screenshot of creating a new ASP.NET Core web application](./media/getting-started/multicontainer-createwebapp.png)
 
-1. Add a second ASP.NET Core Web Application project to the same solution and call it *DaprBackEnd*. Select **API** as the project type. By default, a Dapr sidecar relies on the network boundary to limit access to its public API. Therefore, clear the checkbox for **Configure for HTTPS**.
+1. Add a second ASP.NET Core Web Application project to the same solution and call it *DaprBackEnd*. Select **API** as the project type. By default, a Dapr sidecar relies on the network boundary to limit access to its public API. So, clear the checkbox for **Configure for HTTPS**.
 
    ![Screenshot of creating the  web API](./media/getting-started/multicontainer-createwebapi.png)
 
@@ -306,7 +306,7 @@ Now, you'll configure communication between the services using Dapr [service inv
    }
    ```
 
-   You add Dapr capabilities into the  web app by injecting the `DaprClient` class into `IndexModel` constructor. In the `OnGet` method, you call the  API service with the Dapr service invocation building block. The `OnGet` method is invoked whenever a user visits the home page. You use the `DaprClient.InvokeMethodAsync` method to invoke the `weatherforecast` method of the `daprbackend` service. You'll configure the  web API to use `daprbackend` as its application id later on when configuring it to run with Dapr. Finally, the service response is saved in view data.
+   You add Dapr capabilities into the  web app by injecting the `DaprClient` class into `IndexModel` constructor. In the `OnGet` method, you call the  API service with the Dapr service invocation building block. The `OnGet` method is invoked whenever a user visits the home page. You use the `DaprClient.InvokeMethodAsync` method to invoke the `weatherforecast` method of the `daprbackend` service. You'll configure the web API to use `daprbackend` as its application ID later on when configuring it to run with Dapr. Finally, the service response is saved in view data.
 
 1. Replace the contents of the *Index.cshtml* file in the *Pages* folder, with the following code. It displays the weather forecasts stored in the view data to the user:
 
@@ -331,7 +331,7 @@ Now, you'll configure communication between the services using Dapr [service inv
 
 In the final part of this example, you'll add container support and run the solution using Docker Compose.
 
-1. Right-click the `DaprFrontEnd` project, and choose **Add > Container Orchestrator Support**. The **Add Container Orchestrator Support** dialog appears:
+1. Right-click the `DaprFrontEnd` project, and choose **Add** > **Container Orchestrator Support**. The **Add Container Orchestrator Support** dialog appears:
 
    ![Screenshot of adding container orchestrator support](./media/getting-started/multicontainer-addorchestrator.png)
 
@@ -363,7 +363,7 @@ In the final part of this example, you'll add container support and run the solu
 
 1. In the `DaprBackEnd` web API project, right-click on the project node, and choose **Add** > **Container Orchestrator Support**. Choose **Docker Compose**, and then select **Linux** again as the target OS.
 
-   Open the *docker-compose.yml* file again and examine its contents. Visual Studio has update the Docker Compose file. Now both services are included:
+   Open the *docker-compose.yml* file again and examine its contents. Visual Studio has updated the Docker Compose file. Now both services are included:
 
    ```yaml
    version: '3.4'
